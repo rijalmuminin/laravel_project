@@ -41,27 +41,60 @@
                         @csrf
                         <div class=form-group>
                             <label>Nama dosen</label>
-                            <input type="text" class="form-control" name="nama_dosen" required>
+                            <input type="text" class="form-control @error('nama_dosen') is-invalid @enderror" name="nama_dosen">
+                            @error('nama_dosen')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class=form-group>
                             <label>Telepon</label>
-                            <input type="text" class="form-control" name="telepon" required>
+                            <input type="number" class="form-control @error('telepon') is-invalid @enderror" name="telepon">
+                            @error('telepon')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class=form-group>
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" required>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
+                            @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class=form-group>
-                            <label>Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" required>
+
+                            <label for="jabatan">Jabatan</label>
+<select id="jabatan" name="jabatan" class="form-control @error('email') is-invalid @enderror">
+  <option value="">-- Pilih Jabatan --</option>
+  <option value="asisten-ahli">Asisten Ahli</option>
+  <option value="lektor">Lektor</option>
+  <option value="lektor-kepala">Lektor Kepala</option>
+  <option value="guru-besar">Guru Besar / Profesor</option>
+</select>
+
+                            @error('jabatan')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
+
                         <div class=form-group>
-                            <label>status</label>
-                            <input type="text" class="form-control" name="status" required>
-                        </div>
+
+<label for="status">status</label>
+<select id="status" name="status" class="form-control @error('email') is-invalid @enderror">
+<option value="">-- Pilih status --</option>
+<option value="tetap">Tetap</option>
+<option value="tidak-tetap">Tidak tetap</option>
+</select>
+
+@error('status')
+                <div class="invalid-feedback">{{ $message }}</div>
+@enderror
+</div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label>
-                            <input type="file" class="form-control" name="foto" required>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto">
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('dosen.index') }}" class="btn btn-warning">Kembali</a>
@@ -72,6 +105,8 @@
         </div>
     </div>
 </div>
+<br>
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

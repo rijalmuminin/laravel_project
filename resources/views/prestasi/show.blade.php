@@ -34,32 +34,36 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Artikel</div>
+                <div class="card-header">Prestasi</div>
 
                 <div class="card-body">
-                    <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('prestasi.update', $prestasi->id) }}" method="post" enctype="multipart/form-data">
                          @csrf
                         @method('put')
                         <div class=form-group>
-                            <label>Artikel</label>
-                            <input type="text" class="form-control" name="judul" value="{{ $artikel->judul }}">
+                            <label>Nama prestasi</label>
+                            <input type="text" class="form-control" name="nama_prestasi" value="{{ $prestasi->nama_prestasi }}" disabled>
+                        </div>
+                        <div class=form-group>
+                            <label>Jenis</label>
+                            <select name="jenis" class="form-control"  disabled >
+                                <option value="mahasiswa">{{ $prestasi->jenis }}</option>
+                                <option value="sekolah">{{ $prestasi->jenis }}</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                                        <label for="isi">Isi</label><br>
-                                        <textarea name="isi" class="form-control @error('isi') is-invalid @enderror" rows="4">{{ $artikel->isi }}</textarea>
-                        </div>
-
-                        <div class=form-group>
-                            <label>Tanggal</label>
-                            <input type="date" class="form-control" name="tanggal" value="{{ $artikel->tanggal }}">
-                        </div>
-
+                                        <label for="deskripsi">Deskripsi</label><br>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" disabled>{{ $prestasi->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label> 
                             <br>
-                            <img src="{{asset('storage/artikel/'. $artikel->foto)}}" alt="Gambar artikel" style="width: 200px;">
+                            <img src="{{asset('storage/prestasi/'. $prestasi->foto)}}" alt="Gambar prestasi" style="width: 200px;" >
                         </div><r>
-                           <a href="{{ route('artikel.index') }}" class="btn btn-warning">Kembali</a>
+                           <a href="{{ route('prestasi.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
 
                 </div>

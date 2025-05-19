@@ -37,8 +37,16 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'judul'              => 'required|unique:artikels',
+            'tanggal'            => 'required',
+            'isi'                => 'required',
+            'foto'               => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $artikel   = new artikel();
         $artikel->judul = $request->judul;
+        $artikel->tanggal = $request->tanggal;
         $artikel->isi = $request->isi;
 
         // upload gambar atau foto
@@ -86,8 +94,16 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'judul'              => 'required',
+            'tanggal'            => 'required',
+            'isi'                => 'required',
+            'foto'               => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $artikel   = Artikel::findOrFail($id);
         $artikel->judul = $request->judul;
+        $artikel->tanggal = $request->tanggal;
         $artikel->isi= $request->isi;
 
         if ($request->hasfile('foto')) {

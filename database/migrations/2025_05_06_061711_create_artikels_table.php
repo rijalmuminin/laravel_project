@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->Increments('id');
+            $table->date('tanggal');
             $table->string('judul');
             $table->text('isi');
             $table->string('foto');

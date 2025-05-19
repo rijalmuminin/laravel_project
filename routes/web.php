@@ -6,6 +6,8 @@ use App\http\Controllers\FasilitasController;
 use App\http\Controllers\DosenController;
 use App\http\Controllers\UkmController;
 use App\http\Controllers\FakultasController;
+use App\http\Controllers\PrestasiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +27,7 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -34,3 +36,4 @@ Route::resource('fasilitas', FasilitasController::class);
 Route::resource('dosen', DosenController::class);
 Route::resource('ukm', UkmController::class);
 Route::resource('fakultas', FakultasController::class);
+Route::resource('prestasi', PrestasiController::class);

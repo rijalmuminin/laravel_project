@@ -30,36 +30,48 @@
         <!-- navbar -->
 
         <!-- Container Fluid-->
-        <div class="container">
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Artikel</div>
+                <div class="card-header">Prestasi</div>
 
                 <div class="card-body">
-                    <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
-                         @csrf
-                        @method('put')
+                    <form action="{{ route('prestasi.store') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class=form-group>
-                            <label>Artikel</label>
-                            <input type="text" class="form-control" name="judul" value="{{ $artikel->judul }}">
+                            <label>Nama Prestasi</label>
+                            <input type="text" class="form-control @error('nama_prestasi') is-invalid @enderror" name="nama_prestasi" >
+                            @error('nama_prestasi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
+        
+                        <div class=form-group>
+                            <label class="form-label">Jenis</label>
+                            <select name="jenis" class="form-control @error('jenis') is-invalid @enderror" >
+    
+                                <option value="mahasiswa">mahasiswa</option>
+                                <option value="unirvesitas">unirvesitas</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
-                                        <label for="isi">Isi</label><br>
-                                        <textarea name="isi" class="form-control @error('isi') is-invalid @enderror" rows="4">{{ $artikel->isi }}</textarea>
-                        </div>
-
+                                        <label for="deskripsi">deskripsi</label><br>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4"></textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
-                            <label>Tanggal</label>
-                            <input type="date" class="form-control" name="tanggal" value="{{ $artikel->tanggal }}">
-                        </div>
-
-                        <div class=form-group>
-                            <label>Tambahkan Foto</label> 
-                            <br>
-                            <img src="{{asset('storage/artikel/'. $artikel->foto)}}" alt="Gambar artikel" style="width: 200px;">
+                            <label>Tambahkan Foto</label>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
-                           <a href="{{ route('artikel.index') }}" class="btn btn-warning">Kembali</a>
+                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <a href="{{ route('prestasi.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
 
                 </div>

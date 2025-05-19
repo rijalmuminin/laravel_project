@@ -197,7 +197,7 @@
 		<div class="container">
 			<div class="row mb-5">
 				<div class="col-lg-6">
-					<h2 class="heading">Projects</h2>
+					<h2 class="heading">Fasilitas</h2>
 				</div>
 				<div class="col-lg-4">
 					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque.</p>
@@ -286,7 +286,7 @@
 	<div class="sec-4 section bg-light">
 
 		<div class="text-center mb-5">
-			<h2 class="heading mb-5 text-center">Testimonial</h2>
+			<h2 class="heading mb-5 text-center">PRESTASI</h2>
 		</div>
 		<div class="testimonial-slide-center-wrap" data-aos="fade-up" data-aos-delay="100">
 
@@ -450,7 +450,7 @@
 		<div class="container">
 			<div class="row mb-5">
 				<div class="col-lg-6">
-					<h2 class="heading">News</h2>
+					<h2 class="heading">Artikel</h2>
 				</div>
 				<div class="col-lg-6">
 					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque.</p>

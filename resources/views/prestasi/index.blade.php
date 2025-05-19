@@ -30,13 +30,13 @@
         <!-- navbar -->
 
         <!-- Container Fluid-->
-        <div class="container">
+    <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-20">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-item-center">
-                    <span>artikel</span>
-                <a href="{{ route('artikel.create') }}" class="btn btn-sm btn-primary">
+                    <span>Prestasi</span>
+                <a href="{{ route('prestasi.create') }}" class="btn btn-sm btn-primary">
                     Tambah
                 </a>
                 </div>
@@ -52,30 +52,30 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Judul</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Isi</th>
+                                <th scope="col">Nama Prestasi</th>
+                                <th scope="col">Jenis</th>
+                                <th scope="col">Deskripsi</th>
                                 <th scope="col">Foto</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php $no = 1; @endphp
-                            @foreach ($artikel as $data)
+                            @foreach ($prestasi as $data)
                             <tr>
                             <td scope="row">{{ $no++ }}</td>
-                            <td scope="row">{{ $data->judul }}</td>
-                            <td scope="row">{{ $data->tanggal }}</td>
-                            <td scope="row">{{ Str::limit($data->isi,50) }}</td>
+                            <td scope="row">{{ $data->nama_prestasi }}</td>
+                            <td scope="row">{{ $data->jenis }}</td>
+                            <td scope="row">{{ Str::limit($data->deskripsi,50) }}</td>
                             <td>
-                                <img src="{{ asset('storage/artikel/'. $data->foto) }}" alt="Gambar artikel" style="width: 100px;">
+                                <img src="{{ asset('storage/prestasi/'. $data->foto) }}" alt="Gambar prestasi" style="width: 100px;">
                             </td>
                             <th>
-                                <form action="{{ route('artikel.destroy',$data->id) }}" method="POST">
+                                <form action="{{ route('prestasi.destroy',$data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                            <a href="{{ route('artikel.edit', $data->id) }}" class="btn btn-success btn-sm">Edit</a>
-                            <a href="{{ route('artikel.show', $data->id) }}" class="btn btn-warning btn-sm">Show</a>
+                            <a href="{{ route('prestasi.edit', $data->id) }}" class="btn btn-success btn-sm">Edit</a>
+                            <a href="{{ route('prestasi.show', $data->id) }}" class="btn btn-warning btn-sm">Show</a>
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">delete</button>
                             </td>
                             </form>

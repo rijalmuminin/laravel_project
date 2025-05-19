@@ -42,17 +42,35 @@
                         @method('put')
                         <div class=form-group>
                             <label>Artikel</label>
-                            <input type="text" class="form-control" name="judul" value="{{ $artikel->judul }}" required>
-                        </div>
-                        <div class=form-group>
-                            <label>Isi</label>
-                            <textarea name="isi" id="" required cols="90" rows="9" value="">{{ $artikel->isi }}</textarea>
-                        </div>
+                            <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ $artikel->judul }}">
+                            @error('judul')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                          </div>
+
+                          <div class=form-group>
+                            <label>Tanggal</label>
+                            <input type="date" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ $artikel->tanggal }}">
+                            @error('tanggal')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                          </div>
+
+                        <div class="form-group">
+                                        <label for="isi">Isi</label><br>
+                                        <textarea name="isi" class="form-control @error('isi') is-invalid @enderror" rows="4">{{ $artikel->isi }}</textarea>
+                                        @error('isi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
                             <label>Foto</label> <br>
                             <img src="{{asset('storage/artikel/'. $artikel->foto)}}" alt="Gambar artikel" style="width: 100px;">
-                            <input type="file" class="form-control" name="foto" value="{{ $artikel->foto }}" required>
-                        </div><r>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $artikel->foto }}">
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                          </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('artikel.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
@@ -62,6 +80,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

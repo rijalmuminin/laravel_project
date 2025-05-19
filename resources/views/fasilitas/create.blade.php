@@ -41,11 +41,17 @@
                         @csrf
                         <div class=form-group>
                             <label>Nama Fasilitas</label>
-                            <input type="text" class="form-control" name="nama_fasilitas" required>
-                        </div>
+                            <input type="text" class="form-control @error('nama_fasilitas') is-invalid @enderror" name="nama_fasilitas" >
+                            @error('nama_fasilitas')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                          </div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label>
-                            <input type="file" class="form-control" name="foto" required>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" >
+                            @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('fasilitas.index') }}" class="btn btn-warning">Kembali</a>
@@ -56,6 +62,8 @@
         </div>
     </div>
 </div>
+<br>
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

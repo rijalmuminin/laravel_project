@@ -44,14 +44,17 @@
                             <label>Nama Ukm</label>
                             <input type="text" class="form-control" name="nama_ukm" value="{{ $ukm->nama_ukm }}" disabled>
                         </div>
-                        <div class=form-group>
-                            <label>Deskripsi</label>
-                            <textarea name="deskripsi" id="" disabled cols="90" rows="9" value="">{{ $ukm->deskripsi }}</textarea>
-                        </div>
+                        <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label><br>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" disabled>{{ $ukm->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label> 
                             <br>
-                            <img src="{{asset('storage/ukm/'. $ukm->foto)}}" alt="Gambar ukm" style="width: 200px;">
+                            <img src="{{asset('storage/ukm/'. $ukm->foto)}}" alt="Gambar ukm" style="width:300px;">
                         </div><r>
                            <a href="{{ route('ukm.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
@@ -61,6 +64,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

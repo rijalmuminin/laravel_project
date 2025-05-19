@@ -42,17 +42,26 @@
                         @method('put')
                         <div class=form-group>
                             <label>Nama Ukm</label>
-                            <input type="text" class="form-control" name="nama_ukm" value="{{ $ukm->nama_ukm }}" required>
-                        </div>
-                        <div class=form-group>
-                            <label>Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="90" rows="9" required>{{ $ukm->deskripsi }}</textarea>
-                        </div>
+                            <input type="text" class="form-control @error('nama_ukm') is-invalid @enderror" name="nama_ukm" value="{{ $ukm->nama_ukm }}" >
+                            @error('nama_ukm')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                          </div>
+                        <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label><br>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" >{{ $ukm->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
                             <label>Foto</label> <br>
                             <img src="{{asset('storage/ukm/'. $ukm->foto)}}" alt="Gambar ukm" style="width: 100px;">
-                            <input type="file" class="form-control" name="foto" value="{{ $ukm->foto }}" required>
-                        </div><r>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $ukm->foto }}" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                          </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('ukm.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
@@ -62,6 +71,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

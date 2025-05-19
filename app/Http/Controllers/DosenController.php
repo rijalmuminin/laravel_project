@@ -37,6 +37,15 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nama_dosen'        => 'required|unique:dosens',
+            'telepon'           => 'required|unique:dosens',
+            'email'             => 'required|unique:dosens',
+            'jabatan'           => 'required',
+            'status'            => 'required',
+            'foto'              => 'required|mimes:jpg,png|max:2048',
+         ]);
+
         $dosen   = new Dosen();
         $dosen->nama_dosen = $request->nama_dosen;
         $dosen->telepon = $request->telepon;
@@ -88,6 +97,15 @@ class DosenController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'nama_dosen'        => 'required',
+            'telepon'           => 'required',
+            'email'             => 'required',
+            'jabatan'           => 'required',
+            'status'            => 'required',
+            'foto'              => 'required|mimes:jpg,png|max:2048',
+         ]);
+
         $dosen   = Dosen::findOrFail($id);
         $dosen->nama_dosen = $request->nama_dosen;
         $dosen->telepon= $request->telepon;

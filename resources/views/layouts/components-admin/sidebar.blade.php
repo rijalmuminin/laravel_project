@@ -3,14 +3,15 @@
         <div class="sidebar-brand-icon">
           <img src="{{ asset ('admin/img/logo/itb.png')}}">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3">ITB</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="home">
+        <a class="nav-link" href="{{url('home')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+     
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Features
@@ -31,7 +32,8 @@
             <a href="{{ route ('dosen.index') }}"  class="collapse-item" > Dosen</a>
             <a href="{{ route ('ukm.index') }}"  class="collapse-item" > Ukm</a>
             <a href="{{ route ('fakultas.index') }}"  class="collapse-item" > Fakultas</a>
-          </div>
+            <a href="{{ route ('prestasi.index') }}"  class="collapse-item" > Prestasi</a>
+            </div>
         </div>
       </li>
       

@@ -46,7 +46,7 @@
                         </div>
                         <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label><br>
-                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4">{{ $fakultas->deskripsi }}</textarea>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" disabled>{{ $fakultas->deskripsi }}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -64,6 +64,8 @@
         </div>
     </div>
 </div>
+<br>
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

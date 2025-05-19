@@ -37,6 +37,11 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nama_fasilitas'    => 'required|unique:fasilitas',
+            'foto'              => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $fasilitas   = new Fasilitas();
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
 
@@ -85,6 +90,11 @@ class FasilitasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'nama_fasilitas'    => 'required',
+            'foto'              => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $fasilitas   = Fasilitas::findOrFail($id);
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
 

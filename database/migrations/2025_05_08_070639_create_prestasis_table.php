@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('prestasis', function (Blueprint $table) {
             $table->Increments('id');
-            $table->
+            $table->string('nama_prestasi');
+            $table->string('jenis');
+            $table->text('deskripsi');
+            $table->string('foto');
             $table->timestamps();
         });
     }

@@ -42,11 +42,14 @@
                         @method('put')
                         <div class=form-group>
                             <label>Nama Fakultas</label>
-                            <input type="text" class="form-control" name="nama_fakultas" value="{{ $fakultas->nama_fakultas }}" required>
+                            <input type="text" class="form-control @error('nama_fakultas') is-invalid @enderror" name="nama_fakultas" value="{{ $fakultas->nama_fakultas }}" >
+                            @error('nama_fakultas')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
                         <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label><br>
-                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4">{{ $fakultas->deskripsi }}</textarea>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" >{{ $fakultas->deskripsi }}</textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -54,7 +57,10 @@
                         <div class=form-group>
                             <label>Foto</label> <br>
                             <img src="{{asset('storage/fakultas/'. $fakultas->foto)}}" alt="Gambar fakultas" style="width: 100px;">
-                            <input type="file" class="form-control" name="foto" value="{{ $fakultas->foto }}" required>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $fakultas->foto }}" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('fakultas.index') }}" class="btn btn-warning">Kembali</a>
@@ -65,6 +71,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

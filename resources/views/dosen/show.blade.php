@@ -42,23 +42,23 @@
                         @method('put')
                         <div class=form-group>
                             <label>Dosen</label>
-                            <input type="text" class="form-control" name="nama_dosen" value="{{ $dosen->nama_dosen }}" disabled>
+                            <input type="text" class="form-control" name="nama_dosen" value="{{ $dosen->nama_dosen }}" disabled >
                         </div>
                         <div class=form-group>
                             <label>Telepon</label>
-                            <input type="text" class="form-control" name="telepon" value="{{ $dosen->telepon }}" disabled>
+                            <input type="number" class="form-control" name="telepon" value="{{ $dosen->telepon }}" disabled >
                         </div>
                         <div class=form-group>
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" value="{{ $dosen->email }}" disabled>
+                            <input type="email" class="form-control" name="email" value="{{ $dosen->email }}" disabled >
                         </div>
                         <div class=form-group>
                             <label>Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" value="{{ $dosen->jabatan }}" disabled>
+                            <input type="text" class="form-control" name="jabatan" value="{{ $dosen->jabatan }}" disabled >
                         </div>
                         <div class=form-group>
                             <label>Status</label>
-                            <input type="text" class="form-control" name="status" value="{{ $dosen->status }}" disabled>
+                            <input type="text" class="form-control" name="status" value="{{ $dosen->status }}" disabled >
                         </div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label> 
@@ -73,6 +73,8 @@
         </div>
     </div>
 </div>
+<br>
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

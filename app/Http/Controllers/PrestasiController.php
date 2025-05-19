@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Fakultas;
+use App\Models\Prestasi;
 use Storage;
 
-class FakultasController extends Controller
+class PrestasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class FakultasController extends Controller
      */
     public function index()
     {
-        $fakultas = Fakultas::all();
-        return view('fakultas.index', compact('fakultas'));
+        $prestasi = Prestasi::all();
+        return view('prestasi.index', compact('prestasi'));
     }
 
     /**
@@ -26,7 +26,8 @@ class FakultasController extends Controller
      */
     public function create()
     {
-        return view('fakultas.create');
+        return view('prestasi.create');
+
     }
 
     /**
@@ -37,25 +38,27 @@ class FakultasController extends Controller
      */
     public function store(Request $request)
     {
-         $validated = $request->validate([
-           'nama_fakultas'      => 'required|unique:fakultas',
-           'foto'               => 'required|mimes:jpg,png|max:1024',
-           'deskripsi'          => 'required',
-        ]);
+        $validated = $request->validate([
+            'nama_prestasi'    => 'required|unique:prestasis',
+            'jenis'    => 'required',
+            'deskripsi'    => 'required',
+            'foto'          => 'required|mimes:jpg,png|max:1024',
+         ]);
 
-        $fakultas   = new Fakultas();
-        $fakultas->nama_fakultas = $request->nama_fakultas;
-        $fakultas->deskripsi = $request->deskripsi;
+        $prestasi   = new Prestasi();
+        $prestasi->nama_prestasi = $request->nama_prestasi;
+        $prestasi->jenis = $request->jenis;
+        $prestasi->deskripsi = $request->deskripsi;
         // upload gambar atau foto
         if ($request->hasfile('foto')) {
             $img = $request->file('foto');
             $name = rand(1000,9999) . $img->getClientOriginalName();
-            $img->move('storage/fakultas', $name);
-            $fakultas->foto = $name;
+            $img->move('storage/prestasi', $name);
+            $prestasi->foto = $name;
         }
-        $fakultas->save();
+        $prestasi->save();
         session()->flash('success', 'Data Berhasil Ditambahkan');
-        return redirect()->route('fakultas.index');
+        return redirect()->route('prestasi.index');
     }
 
     /**
@@ -66,8 +69,8 @@ class FakultasController extends Controller
      */
     public function show($id)
     {
-        $fakultas = Fakultas::findOrFail($id);
-        return view('fakultas.show', compact('fakultas'));
+        $prestasi = Prestasi::findOrFail($id);
+        return view('prestasi.show', compact('prestasi'));
     }
 
     /**
@@ -78,8 +81,8 @@ class FakultasController extends Controller
      */
     public function edit($id)
     {
-        $fakultas = Fakultas::findOrFail($id);
-       return view('fakultas.edit', compact('fakultas'));
+        $prestasi = Prestasi::findOrFail($id);
+        return view('prestasi.edit', compact('prestasi'));
     }
 
     /**
@@ -92,26 +95,28 @@ class FakultasController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'nama_fakultas'      => 'required',
-            'foto'               => 'required|mimes:jpg,png|max:1024',
-            'deskripsi'          => 'required',
+            'nama_prestasi'    => 'required',
+            'jenis'    => 'required',
+            'deskripsi'    => 'required',
+            'foto'          => 'required|mimes:jpg,png|max:1024',
          ]);
 
-        $fakultas   = Fakultas::findOrFail($id);
-        $fakultas->nama_fakultas = $request->nama_fakultas;
-        $fakultas->deskripsi = $request->deskripsi;
+        $prestasi   = Prestasi::findOrFail($id);
+        $prestasi->nama_prestasi = $request->nama_prestasi;
+        $prestasi->jenis = $request->jenis;
+        $prestasi->deskripsi = $request->deskripsi;
 
         if ($request->hasfile('foto')) {
-            $fakultas->deleteimage();
+            $prestasi->deleteimage();
             $img = $request->file('foto');
             $name = rand(1000,9999) . $img->getClientOriginalName();
-            $img->move('storage/fakultas', $name);
-            $fakultas->foto = $name;
+            $img->move('storage/prestasi', $name);
+            $prestasi->foto = $name;
         }
  
-        $fakultas->save();
+        $prestasi->save();
         session()->flash('success', 'Data Berhasil Ditambahkan');
-        return redirect()->route('fakultas.index');
+        return redirect()->route('prestasi.index');
     }
 
     /**
@@ -122,15 +127,15 @@ class FakultasController extends Controller
      */
     public function destroy($id)
     {
-        {
-            $fakultas = Fakultas::findOrFail($id);
+        
+            $prestasi = Prestasi::findOrFail($id);
             // hapus gambar yang lama jika ada
-            if($fakultas->foto && Storage::exists('public/fakultas/' . $fakultas->foto)) {
-                Storage::delete('public/fakultas/' . $fakultas->foto);
+            if($prestasi->foto && Storage::exists('public/prestasi/' . $prestasi->foto)) {
+                Storage::delete('public/prestasi/' . $prestasi->foto);
             }
     
-            $fakultas->delete();
-            return redirect()->route('fakultas.index')->with('success', 'data berhasil dihapus');
-        }
+            $prestasi->delete();
+            return redirect()->route('prestasi.index')->with('success', 'data berhasil dihapus');
+        
     }
 }

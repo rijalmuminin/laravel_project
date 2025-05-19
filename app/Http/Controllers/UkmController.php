@@ -37,6 +37,12 @@ class UkmController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nama_ukm'    => 'required|unique:ukms',
+            'deskripsi'    => 'required',
+            'foto'          => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $ukm   = new Ukm();
         $ukm->nama_ukm = $request->nama_ukm;
         $ukm->deskripsi = $request->deskripsi;
@@ -85,6 +91,12 @@ class UkmController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'nama_ukm'    => 'required',
+            'deskripsi'    => 'required',
+            'foto'          => 'required|mimes:jpg,png|max:1024',
+         ]);
+
         $ukm   = Ukm::findOrFail($id);
         $ukm->nama_ukm = $request->nama_ukm;
         $ukm->deskripsi = $request->deskripsi;
@@ -110,7 +122,7 @@ class UkmController extends Controller
      */
     public function destroy($id)
     {
-        {
+        
             $ukm = Ukm::findOrFail($id);
             // hapus gambar yang lama jika ada
             if($ukm->foto && Storage::exists('public/ukm/' . $ukm->foto)) {
@@ -119,6 +131,6 @@ class UkmController extends Controller
     
             $ukm->delete();
             return redirect()->route('ukm.index')->with('success', 'data berhasil dihapus');
-        }
+        
     }
 }

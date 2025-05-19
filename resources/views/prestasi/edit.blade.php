@@ -34,32 +34,43 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Artikel</div>
+                <div class="card-header">Edit Data Prestasi</div>
 
                 <div class="card-body">
-                    <form action="{{ route('artikel.update', $artikel->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('prestasi.update', $prestasi->id) }}" method="post" enctype="multipart/form-data">
                          @csrf
                         @method('put')
                         <div class=form-group>
-                            <label>Artikel</label>
-                            <input type="text" class="form-control" name="judul" value="{{ $artikel->judul }}">
+                            <label>Nama Prestasi</label>
+                            <input type="text" class="form-control" name="nama_prestasi" value="{{ $prestasi->nama_prestasi }}" >
+                        </div>
+                        <div class=form-group>
+                            <label>Jenis</label>
+                            <select name="jenis" class="form-control @error('jenis') is-invalid @enderror" >
+                                <option value="mahasiswa" {{ $prestasi->jenis == "Mahasiswa"? 'selected' :''}}>Mahasiswa</option>
+                                <option value="universitas" {{ $prestasi->jenis == "Universitas"? 'selected' :''}}>Universitas</option>
+                            </select>
+                            @error('jenis')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                                        <label for="isi">Isi</label><br>
-                                        <textarea name="isi" class="form-control @error('isi') is-invalid @enderror" rows="4">{{ $artikel->isi }}</textarea>
-                        </div>
-
+                                        <label for="deskripsi">Deskripsi</label><br>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" >{{ $prestasi->deskripsi }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
                         <div class=form-group>
-                            <label>Tanggal</label>
-                            <input type="date" class="form-control" name="tanggal" value="{{ $artikel->tanggal }}">
-                        </div>
-
-                        <div class=form-group>
-                            <label>Tambahkan Foto</label> 
-                            <br>
-                            <img src="{{asset('storage/artikel/'. $artikel->foto)}}" alt="Gambar artikel" style="width: 200px;">
+                            <label>Foto</label> <br>
+                            <img src="{{asset('storage/prestasi/'. $prestasi->foto)}}" alt="Gambar prestasi" style="width: 100px;">
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $prestasi->foto }}" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
-                           <a href="{{ route('artikel.index') }}" class="btn btn-warning">Kembali</a>
+                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <a href="{{ route('prestasi.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
 
                 </div>
@@ -68,7 +79,6 @@
     </div>
 </div>
 <br>
-
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
@@ -93,3 +103,4 @@
 </body>
 
 </html>
+

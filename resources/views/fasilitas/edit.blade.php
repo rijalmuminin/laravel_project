@@ -42,13 +42,19 @@
                         @method('put')
                         <div class=form-group>
                             <label>Fasilitas</label>
-                            <input type="text" class="form-control" name="nama_fasilitas" value="{{ $fasilitas->nama_fasilitas }}" required>
-                        </div>
+                            <input type="text" class="form-control @error('nama_fasilitas') is-invalid @enderror" name="nama_fasilitas" value="{{ $fasilitas->nama_fasilitas }}" >
+                            @error('nama_fasilitas')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                          </div>
                         <div class=form-group>
                             <label>Foto</label> <br>
                             <img src="{{asset('storage/fasilitas/'. $fasilitas->foto)}}" alt="Gambar fasilitas" style="width: 100px;">
-                            <input type="file" class="form-control" name="foto" value="{{ $fasilitas->foto }}" required>
-                        </div><r>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $fasilitas->foto }}" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                          </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('fasilitas.index') }}" class="btn btn-warning">Kembali</a>
                     </form>
@@ -58,6 +64,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

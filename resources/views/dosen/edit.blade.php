@@ -42,28 +42,56 @@
                         @method('put')
                         <div class=form-group>
                             <label>Nama Dosen</label>
-                            <input type="text" class="form-control" name="nama_dosen" value="{{ $dosen->nama_dosen }}" required>
+                            <input type="text" class="form-control @error('nama_dosen') is-invalid @enderror" name="nama_dosen" value="{{ $dosen->nama_dosen }}" >
+                            @error('nama_dosen')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
                         <div class=form-group>
                             <label>Telepon</label>
-                            <input type="text" class="form-control" name="telepon" value="{{ $dosen->telepon }}" required>
+                            <input type="number" class="form-control @error('telepon') is-invalid @enderror" name="telepon" value="{{ $dosen->telepon }}" >
+                            @error('telepon')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
                         <div class=form-group>
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" value="{{ $dosen->email }}" required>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $dosen->email }}" >
+                            @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
+                        
                         <div class=form-group>
-                            <label>Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" value="{{ $dosen->jabatan }}" required>
+                        <label>Jabatan</label>
+                            <select name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" >
+                                <option value="asisten-ahli" {{ $dosen->jabatan == "asisten-ahli"? 'selected' :''}}>asisten-ahli</option>
+                                <option value="lektor" {{ $dosen->jabatan == "lektor"? 'selected' :''}}>lektor</option>
+                                <option value="lektor-kepala" {{ $dosen->jabatan == "lektor-kepala"? 'selected' :''}}>lektor-kepala</option>
+                                <option value="guru-besar" {{ $dosen->jabatan == "guru-besar"? 'selected' :''}}>guru-besar</option>
+                            </select>
+                            @error('jabatan')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
-                        <div class=form-group>
-                            <label>Status</label>
-                            <input type="text" class="form-control" name="status" value="{{ $dosen->status }}" required>
+
+                        <label>Status</label>
+                            <select name="status" class="form-control @error('status') is-invalid @enderror" >
+                                <option value="tetap" {{ $dosen->status == "tetap"? 'selected' :''}}>tetap</option>
+                                <option value="tidak-tetap" {{ $dosen->status == "tidak-tetap"? 'selected' :''}}>tidak-tetap</option>
+                            </select>
+                            @error('status')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div>
+                        
                         <div class=form-group>
                             <label>Foto</label> <br>
                             <img src="{{asset('storage/dosen/'. $dosen->foto)}}" alt="Gambar dosen" style="width: 100px;">
-                            <input type="file" class="form-control" name="foto" value="{{ $dosen->foto }}" required>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" value="{{ $dosen->foto }}" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('dosen.index') }}" class="btn btn-warning">Kembali</a>
@@ -74,15 +102,13 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
-      </div>
       <!-- Footer -->
       {{-- footer --}}
              @include('layouts.components-admin.footer')
       {{-- /footer --}}
-      <!-- Footer -->
-    </div>
-  </div>
+      <!-- Footer -->   
 
   <!-- Scroll to top -->
   <a class="scroll-to-top rounded" href="#page-top">

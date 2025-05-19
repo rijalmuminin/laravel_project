@@ -41,18 +41,25 @@
                         @csrf
                         <div class=form-group>
                             <label>Nama fakultas</label>
-                            <input type="text" class="form-control" name="nama_fakultas" required>
+                            <input type="text" class="form-control @error('nama_fakultas') is-invalid @enderror"
+                             name="nama_fakultas" >
                         </div>
+                        @error('nama_fakultas')
+                              <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label><br>
-                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4"></textarea>
+                                        <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" rows="4" ></textarea>
                                         @error('deskripsi')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                         <div class=form-group>
                             <label>Tambahkan Foto</label>
-                            <input type="file" class="form-control" name="foto" required>
+                            <input type="file" class="form-control @error('foto') is-invalid @enderror" name="foto" >
+                            @error('foto')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                         </div><r>
                           <button type="submit" class="btn btn-primary">Simpan</button>
                           <a href="{{ route('fakultas.index') }}" class="btn btn-warning">Kembali</a>
@@ -63,6 +70,8 @@
         </div>
     </div>
 </div>
+<br>
+
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
