@@ -71,7 +71,7 @@
       <ul class="site-menu d-none d-md-flex">
         <li><a href="{{url('./')}}">Beranda</a></li>
         <li><a href="{{url('artikel')}}">Artikel</a></li>
-        <li><a href="#">Dosen</a></li>
+        <li><a href="{{url('dosen')}}">Dosen</a></li>
         <li><a href="{{url('detail')}}">Fasilitas</a></li>
         <li><a href="#">Fakultas</a></li>
         <li><a href="#">UKM</a></li>

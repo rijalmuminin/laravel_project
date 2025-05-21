@@ -53,7 +53,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Dosen</th>
-                                <th scope="col">telepon</th>
+                                <th scope="col">NIP</th>
                                 <th scope="col">email</th>
                                 <th scope="col">jabatan</th>
                                 <th scope="col">status</th>
@@ -95,6 +95,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

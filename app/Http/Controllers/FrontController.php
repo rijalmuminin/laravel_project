@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Fasilitas;
 use App\Models\Artikel;
+use App\Models\Dosen;
 
 
 class FrontController extends Controller
@@ -24,5 +25,10 @@ class FrontController extends Controller
     {
         $artikel = Artikel::all();
         return view('artikel', compact('artikel'));
+    }
+      public function dosen()
+    {
+        $dosen = Dosen::all();
+        return view('dosen', compact('dosen'));
     }
 }

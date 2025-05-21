@@ -45,7 +45,7 @@
                             <input type="text" class="form-control" name="nama_dosen" value="{{ $dosen->nama_dosen }}" disabled >
                         </div>
                         <div class=form-group>
-                            <label>Telepon</label>
+                            <label>NIP</label>
                             <input type="number" class="form-control" name="telepon" value="{{ $dosen->telepon }}" disabled >
                         </div>
                         <div class=form-group>

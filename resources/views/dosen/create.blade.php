@@ -47,7 +47,7 @@
                             @enderror
                         </div>
                         <div class=form-group>
-                            <label>Telepon</label>
+                            <label>NIP</label>
                             <input type="number" class="form-control @error('telepon') is-invalid @enderror" name="telepon">
                             @error('telepon')
                                             <div class="invalid-feedback">{{ $message }}</div>

@@ -4,33 +4,8 @@
 * Tempalte URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
 */ -->
-<!doctype html>
-<html lang="en">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
-
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-    <link href="{{ asset ('admin/img/logo/itb.png')}}" rel="icon">
-
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="{{ asset ('front/fonts/icomoon/style.css') }}">
-	<link rel="stylesheet" href="{{ asset ('front/fonts/flaticon/font/flaticon.css') }}">
-	<link rel="stylesheet" href="{{ asset ('front/css/tiny-slider.css') }}">
-	<link rel="stylesheet" href="{{ asset ('front/css/aos.css') }}">
-	<link rel="stylesheet" href="{{ asset ('front/css/glightbox.min.css') }}">
-	<link rel="stylesheet" href="{{ asset ('front/css/style.css') }}">
-
-	<title>Intitut Teknologi Bandung</title>
-</head>
-<body>
+@extends('layouts.front')
+@section('content')
 
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
@@ -41,10 +16,7 @@
 		<div class="site-mobile-menu-body"></div>
 	</div>
 
-	{{--navbar--}}
-	@include('layouts.components-user.navbar')
-	{{--navbar--}}
-	
+
 
 	<div class="hero-2 overlay" style="background-image: url('front/images/lataritb.jpg');">
 		<div class="container">
@@ -466,21 +438,24 @@
 				@foreach($artikel as $data)
 				<div class="col-lg-4 col-md-6 mb-4 d-flex">
   <div class="post-entry-1 d-flex flex-column justify-content-between h-100 w-100">
-    <a href="single.html">
+    <a href="{{url('detailartikel')}}">
       <img src="{{ asset('storage/artikel/'. $data->foto) }}" alt="image" class="img-fluid uniform-img">
     </a>
     <div class="post-entry-1-contents flex-grow-1 d-flex flex-column justify-content-between">
       <div>
-        <span class="meta d-inline-block mb-0">{{$data->tanggal}} <span class="mx-2">by</span> <a href="#">Admin</a></span>
-        <h2 class="mb-3"><a href="single.html">{{$data->judul}}</a></h2>
+        <span class="meta d-inline-block mb-0">{{$data->tanggal}} <span class="mx-2">by</span> <a >Admin</a></span>
+        <h2 class="mb-3"><a href="{{url('detailartikel')}}">{{$data->judul}}</a></h2>
         <p class="excerpt">{{$data->isi}}</p>
       </div>
-      <p class="mt-auto"><a href="single.html">Read more</a></p>
+      <p class="mt-auto"><a href="{{url('detailartikel')}}">Read more</a></p>
     </div>
   </div>
 </div>
 
 				@endforeach
+				                <div class="col-md-12 text-center mt-5">
+					<p><a href="{{url('artikel')}}" class="btn btn-primary me-4">Lihat semua</a></p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -488,29 +463,9 @@
 
 
 	
-	{{--footer--}}
-	@include('layouts.components-user.footer')
-	{{--footer--}}
+@endsection
 	
 
-
-	
 
 
 	<!-- Preloader -->
-	<div id="overlayer"></div>
-	<div class="loader">
-		<div class="spinner-border" role="status">
-			<span class="visually-hidden">Loading...</span>
-		</div>
-	</div>
-
-	<script src="{{ asset ('front/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ asset ('front/js/tiny-slider.js') }}"></script>
-	<script src="{{ asset ('front/js/aos.js') }}"></script>
-	<script src="{{ asset ('front/js/glightbox.min.js') }}"></script>
-	<script src="{{ asset ('front/js/navbar.js') }}"></script>
-	<script src="{{ asset ('front/js/counter.js') }}"></script>
-	<script src="{{ asset ('front/js/custom.js') }}"></script>
-</body>
-</html>

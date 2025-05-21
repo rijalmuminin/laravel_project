@@ -30,12 +30,21 @@ Route::get('/artikel', function () {
     return view('artikel');
 });
 
+Route::get('/detailartikel', function () {
+    return view('detailartikel');
+});
+
+Route::get('/dosen', function () {
+    return view('dosen');
+});
+
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\FrontController::class, 'index']);
 Route::get('/detail', [App\Http\Controllers\FrontController::class, 'detail']);
 Route::get('/artikel', [App\Http\Controllers\FrontController::class, 'artikel']);
+Route::get('/dosen', [App\Http\Controllers\FrontController::class, 'dosen']);
 
 
 Route::prefix('/admin')->middleware('auth')->group(function (){
