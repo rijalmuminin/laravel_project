@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="{{ asset ('front/css/glightbox.min.css') }}">
 	<link rel="stylesheet" href="{{ asset ('front/css/style.css') }}">
 
-	<title>Archiark &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
+	<title>Intitut Teknologi Bandung</title>
 </head>
 <body>
 
@@ -66,13 +66,13 @@
 		<div class="container">
 			<div class="row g-0">
 				<div class="col-lg-3">
-					<h2 class="heading">We create architectural designs</h2>
-					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio dicta placeat! Et pariatur doloremque ea veniam.</p>
+					<h2 class="heading">Sejarah</h2>
+					<p>Sejarah Pendidikan Tinggi Teknik di Indonesia berawal pada abad ke-20, ketika pemerintah kolonial Belanda mendirikan de Techniche Hoogeschool te Bandung (TH) pada 3 Juli 1920 di lahan seluas 30 hektar di Bandung. Saat itu hanya terdapat satu fakultas yaitu de Faculteit van Technische Wetenschap dan hanya satu jurusan yaitu de afdeeling der We gen Waterbouw. Pendirian perguruan tinggi ini dimaksudkan untuk memenuhi kebutuhan tenaga teknik yang semakin terbatas pada masa kolonial Belanda akibat pecahnya Perang Dunia pertama.</p>
 
 					<p><a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a></p>
 				</div>
 				<div class="col-lg-7 ms-auto">
-					<img src="{{ asset ('front/images/img_8.jpg')}}" alt="Image" class="img-fluid img-r">
+					<img src="{{ asset ('front/images/sejarah.jpg')}}" alt="Image" class="img-fluid img-r">
 				</div>
 			</div>
 		</div>
@@ -81,13 +81,17 @@
 	<div class="section sec-2">
 		<div class="container">
 			<div class="row g-0">
-				<div class="col-lg-6 mb-4 mb-lg-0">
-					<img src="{{ asset ('front/images/img_4.jpg')}}" alt="IMage" class="img-fluid">
+				<div class="col-lg-7 mb-4 mb-lg-0">
+					<img src="{{ asset ('front/images/visimisi.jpg')}}" alt="IMage" class="img-fluid" width="160%">
 				</div>
 				<div class="col-lg-3 ms-auto">
-					<h2 class="heading">Modern Architecture</h2>
-					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio dicta placeat! Et pariatur doloremque ea veniam.</p>
-					<p><a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a></p>
+					<h2 class="heading">Visi dan Misi</h2>
+					<p class=""> Visi <br>
+<p>Menjadi Perguruan Tinggi yang unggul, bermartabat, mandiri, dan diakui dunia serta memandu perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia. (Sumber: 09/SK/I1-SA/OT/2011)</p>
+
+					<p class=""> Misi <br>
+
+<p>Menciptakan, berbagi dan menerapkan ilmu pengetahuan, teknologi, seni dan kemanusiaan serta menghasilkan sumber daya insani yang unggul untuk menjadikan Indonesia dan dunia lebih baik. (Sumber: 09/SK/I1-SA/OT/2011)</p>
 				</div>
 			</div>
 		</div>
@@ -97,8 +101,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
-					<h2 class="heading">Services</h2>
-					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio dicta placeat! Et pariatur doloremque ea veniam.</p>
+					<h2 class="heading">fakultas</h2>
+					<p> merupakan unit akademik yang menaungi berbagai program studi dan kegiatan pendidikan, penelitian, serta pengabdian kepada masyarakat dalam bidang keilmuan tertentu. ITB memiliki beberapa fakultas dan sekolah yang secara umum terbagi berdasarkan rumpun ilmu teknik, sains, seni, dan sosial-humaniora. Berikut penjelasan umum tentang fakultas-fakultas di ITB</p>
+				    <a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
+
 				</div>
 
 				<div class="col-lg-6 ms-auto">
@@ -106,14 +112,14 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingOne">
 								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-									Interior Design
+									Fakultas Ilmu dan Teknologi Kebumian (FITB)
 								</button>
 							</h2>
 							<div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
 									<div class="row justify-content-between">
 										<div class="col-md-4">
-											<img src="{{ asset ('front/images/img_7.jpg')}}" alt="Image" class="img-fluid">
+											<img src="{{ asset ('front/images/fitb.jpg')}}" alt="Image" class="img-fluid">
 										</div>
 										<div class="col-md-8">
 											<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio.</p>
@@ -127,14 +133,14 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingTwo">
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-									Landscape Design
+									Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA)
 								</button>
 							</h2>
 							<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
 								<div class="accordion-body">
 									<div class="row justify-content-between">
 										<div class="col-md-4">
-											<img src="{{ asset ('front/images/img_2.jpg')}}" alt="Image" class="img-fluid">
+											<img src="{{ asset ('front/images/fmipa.jpg')}}" alt="Image" class="img-fluid">
 										</div>
 										<div class="col-md-8">
 											<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio.</p>
@@ -147,7 +153,7 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingThree">
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-									Engineering Plan
+									Fakultas Seni Rupa dan Desain (FSRD)
 								</button>
 							</h2>
 							<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -168,7 +174,7 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingFour">
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-									Architecture Design
+									Fakultas Teknologi Industri (FTI)
 								</button>
 							</h2>
 							<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
@@ -200,81 +206,81 @@
 					<h2 class="heading">Fasilitas</h2>
 				</div>
 				<div class="col-lg-4">
-					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque.</p>
+					<p>Institut Teknologi Bandung (ITB) menyediakan beragam fasilitas modern dan lengkap untuk mendukung kegiatan akademik, non-akademik, serta pengembangan diri mahasiswa. Fasilitas ini tersebar di berbagai kampus ITB, termasuk Kampus Ganesa (Bandung), Jatinangor, dan Cirebon.</p>
 				</div>
 			</div>
 
-			<div class="row g-4">
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_8.jpg')}}" alt="Image" class="img-fluid">
-							<div class="contents">
-								<h3>Project One</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_2.jpg')}}" alt="Image" class="img-fluid">
-							<div class="contents">
-								<h3>Project Two</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_3.jpg')}}" alt="Image" class="img-fluid">
-							<div class="contents">
-								<h3>Project One</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
+			<style>
+        .uniform-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
 
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_4.jpg')}}" alt="Image" class="img-fluid">
-							<div class="contents">
-								<h3>Project One</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_5.jpg')}}" alt="Image" class="img-fluid">
-							<div class="contents">
-								<h3>Project Two</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="single-portfolio">
-						<a href="project-single.html">
-							<img src="{{ asset ('front/images/img_6.jpg')}}" class="img-fluid">
-							<div class="contents">
-								<h3>Project One</h3>
-								<div class="cat">Construction</div>
-							</div>
-						</a>
-					</div>
-				</div>
+        .single-portfolio {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
 
+        .single-portfolio:hover {
+            transform: scale(1.03);
+        }
+
+        .contents {
+            margin-top: 10px;
+        }
+
+        .contents h3 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .cat {
+            font-size: 0.9rem;
+            color: #888;
+        }
+		.excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Jumlah baris maksimal sebelum "..." */
+  -webkit-box-orient: vertical;
+  line-height: 1.5em;
+  max-height: 4.5em; /* 1.5em x 3 baris */
+
+.post-entry-1-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+}
+    </style>
+
+
+<div class="container py-5">
+    <div class="row g-4">
+        @foreach($fasilitas as $data)
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="single-portfolio">
+                    <a href="{{url('detail')}}">
+                        <img src="{{ asset('storage/fasilitas/'. $data->foto) }}" alt="image" class="img-fluid uniform-img">
+                        <div class="contents">
+                            <h3>{{ $data->nama_fasilitas }}</h3>
+                            <div class="cat"></div> 
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+	</div>
 				<div class="col-md-12 text-center mt-5">
-					<p><a href="#" class="btn btn-primary me-4">See all projects</a></p>
+					<p><a href="{{url('detail')}}" class="btn btn-primary me-4">Lihat semua</a></p>
 				</div>
 
 			</div>
@@ -453,57 +459,28 @@
 					<h2 class="heading">Artikel</h2>
 				</div>
 				<div class="col-lg-6">
-					<p>Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque.</p>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="post-entry-1 h-100">
-						<a href="single.html">
-							<img src="{{ asset ('front/images/img_3.jpg')}}" alt="Image"
-							class="img-fluid">
-						</a>
-						<div class="post-entry-1-contents">
-							<span class="meta d-inline-block mb-0">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-							<h2 class="mb-3"><a href="single.html">How Awesome Stay connected</a></h2>
-							
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="single.html">Read more</a></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="post-entry-1 h-100">
-						<a href="single.html">
-							<img src="{{ asset ('front/images/img_4.jpg')}}" alt="Image"
-							class="img-fluid">
-						</a>
-						<div class="post-entry-1-contents">
+				@foreach($artikel as $data)
+				<div class="col-lg-4 col-md-6 mb-4 d-flex">
+  <div class="post-entry-1 d-flex flex-column justify-content-between h-100 w-100">
+    <a href="single.html">
+      <img src="{{ asset('storage/artikel/'. $data->foto) }}" alt="image" class="img-fluid uniform-img">
+    </a>
+    <div class="post-entry-1-contents flex-grow-1 d-flex flex-column justify-content-between">
+      <div>
+        <span class="meta d-inline-block mb-0">{{$data->tanggal}} <span class="mx-2">by</span> <a href="#">Admin</a></span>
+        <h2 class="mb-3"><a href="single.html">{{$data->judul}}</a></h2>
+        <p class="excerpt">{{$data->isi}}</p>
+      </div>
+      <p class="mt-auto"><a href="single.html">Read more</a></p>
+    </div>
+  </div>
+</div>
 
-							<span class="meta d-inline-block mb-0">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-							<h2 class="mb-3"><a href="single.html">We Need Unlimitted People</a></h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="single.html">Read more</a></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="post-entry-1 h-100">
-						<a href="single.html">
-							<img src="{{ asset ('front/images/img_5.jpg')}}" alt="Image"
-							class="img-fluid">
-						</a>
-						<div class="post-entry-1-contents">
-
-							<span class="meta d-inline-block mb-0">July 17, 2019 <span class="mx-2">by</span> <a href="#">Admin</a></span>
-							<h2 class="mb-3"><a href="single.html">Important of getting a notifications</a></h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="single.html">Read more</a></p>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>

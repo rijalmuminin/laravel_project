@@ -4,8 +4,10 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-4">
 					<div class="widget">
-						<h3 class="line-top">About</h3>
-						<p class="mb-5">Delectus voluptatum distinctio quos eius excepturi sunt pariatur, aut, doloribus officia ea molestias beatae laudantium, quam odio ipsum veritatis est maiores velit quasi blanditiis et natus accusamus itaque. Veniam quidem debitis odio amet voluptas distinctio dicta placeat! Et pariatur doloremque ea veniam. Separated they live.</p>
+						<h3 class="line-top">ITB</h3>
+						<p class="mb-5">Institut Teknologi Bandung (ITB) adalah salah satu perguruan tinggi terbaik di Indonesia yang berfokus pada pengembangan pendidikan, penelitian, dan inovasi di bidang sains, teknologi, seni, dan humaniora. Didirikan pada tahun 1920, ITB berkomitmen mencetak pemimpin masa depan yang berintegritas, kreatif, dan berdaya saing global.
+
+</p>
 
 					</div>
 					<div class="widget">

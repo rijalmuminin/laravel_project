@@ -69,24 +69,16 @@
       </a>
 
       <ul class="site-menu d-none d-md-flex">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">UKM</a></li>
+        <li><a href="{{url('./')}}">Beranda</a></li>
+        <li><a href="{{url('artikel')}}">Artikel</a></li>
         <li><a href="#">Dosen</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="{{url('detail')}}">Fasilitas</a></li>
+        <li><a href="#">Fakultas</a></li>
+        <li><a href="#">UKM</a></li>
+        <li><a href="#">Prestasi</a></li>
         <li>
           <!-- Laravel Auth Example Placeholder -->
-          @if (Route::has('login'))
-            @auth
-              <a href="{{ url('/home') }}">
-                <i class="fas fa-user-circle me-2"></i>{{ Auth::user()->name }}
-              </a>
-            @else
-              <a href="{{ route('login') }}">Log in</a>
-              @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-              @endif
-            @endauth
-          @endif
+        
         </li>
       </ul>
     </div>

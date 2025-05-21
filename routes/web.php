@@ -7,6 +7,7 @@ use App\http\Controllers\DosenController;
 use App\http\Controllers\UkmController;
 use App\http\Controllers\FakultasController;
 use App\http\Controllers\PrestasiController;
+use App\http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +20,26 @@ use App\http\Controllers\PrestasiController;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', function () {
-    return view('user');
+Route::get('/artikel', function () {
+    return view('artikel');
 });
 
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\FrontController::class, 'index']);
+Route::get('/detail', [App\Http\Controllers\FrontController::class, 'detail']);
+Route::get('/artikel', [App\Http\Controllers\FrontController::class, 'artikel']);
+
+
+Route::prefix('/admin')->middleware('auth')->group(function (){
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('artikel', ArtikelController::class);
 Route::resource('fasilitas', FasilitasController::class);
@@ -37,3 +47,4 @@ Route::resource('dosen', DosenController::class);
 Route::resource('ukm', UkmController::class);
 Route::resource('fakultas', FakultasController::class);
 Route::resource('prestasi', PrestasiController::class);
+});

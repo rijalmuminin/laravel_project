@@ -87,6 +87,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->

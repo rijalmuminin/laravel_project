@@ -32,7 +32,7 @@
         <!-- Container Fluid-->
         <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-40">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-item-center">
                     <span>artikel</span>
@@ -91,6 +91,7 @@
         </div>
     </div>
 </div>
+<br>
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
