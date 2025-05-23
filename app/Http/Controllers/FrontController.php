@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Fasilitas;
 use App\Models\Artikel;
 use App\Models\Dosen;
+use App\Models\Fakultas;
 
 
 class FrontController extends Controller
@@ -30,5 +31,22 @@ class FrontController extends Controller
     {
         $dosen = Dosen::all();
         return view('dosen', compact('dosen'));
+    }
+
+      public function fakultas()
+    {
+        $fakultas = Fakultas::all();
+        return view('fakultas', compact('fakultas'));
+    }
+
+      public function detailArtikel($id)
+    {
+        $artikel = Artikel::findOrFail($id);
+        return view('detailartikel', compact('artikel'));
+    }
+    public function prestasi()
+    {
+        $prestasi = Prestasi::all();
+        return view('prestasi', compact('prestasi'));
     }
 }

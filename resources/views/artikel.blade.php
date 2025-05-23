@@ -82,16 +82,16 @@
 				@foreach($artikel as $data)
 				<div class="col-lg-4 col-md-6 mb-4 d-flex">
   <div class="post-entry-1 d-flex flex-column justify-content-between h-100 w-100">
-    <a href="{{url('detailartikel')}}">
+    <a href="{{route('detailartikel',$data->id)}}">
       <img src="{{ asset('storage/artikel/'. $data->foto) }}" alt="image" class="img-fluid uniform-img">
     </a>
     <div class="post-entry-1-contents flex-grow-1 d-flex flex-column justify-content-between">
       <div>
         <span class="meta d-inline-block mb-0">{{$data->tanggal}} <span class="mx-2">by</span> <a>Admin</a></span>
-        <h2 class="mb-3"><a href="{{url('detailartikel')}}">{{$data->judul}}</a></h2>
+        <h2 class="mb-3"><a href="{{route('detailartikel',$data->id)}}">{{$data->judul}}</a></h2>
         <p class="excerpt">{{$data->isi}}</p>
       </div>
-      <p class="mt-auto"><a href="{{url('detailartikel')}}">Read more</a></p>
+      <p class="mt-auto"><a href="{{route('detailartikel',$data->id)}}">Read more</a></p>
     </div>
   </div>
 </div>

@@ -75,7 +75,7 @@
 				<div class="col-lg-3">
 					<h2 class="heading">fakultas</h2>
 					<p> merupakan unit akademik yang menaungi berbagai program studi dan kegiatan pendidikan, penelitian, serta pengabdian kepada masyarakat dalam bidang keilmuan tertentu. ITB memiliki beberapa fakultas dan sekolah yang secara umum terbagi berdasarkan rumpun ilmu teknik, sains, seni, dan sosial-humaniora. Berikut penjelasan umum tentang fakultas-fakultas di ITB</p>
-				    <a href="#" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
+				    <a href="{{url('fakultas')}}" class="more-2">Learn more <span class="icon-arrow_forward"></span></a>
 
 				</div>
 
@@ -84,7 +84,6 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingOne">
 								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-									Fakultas Ilmu dan Teknologi Kebumian (FITB)
 								</button>
 							</h2>
 							<div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -102,6 +101,7 @@
 								</div>
 							</div>
 						</div>
+						
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="flush-headingTwo">
 								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -438,16 +438,16 @@
 				@foreach($artikel as $data)
 				<div class="col-lg-4 col-md-6 mb-4 d-flex">
   <div class="post-entry-1 d-flex flex-column justify-content-between h-100 w-100">
-    <a href="{{url('detailartikel')}}">
+    <a href="{{route('detailartikel',$data->id)}}">
       <img src="{{ asset('storage/artikel/'. $data->foto) }}" alt="image" class="img-fluid uniform-img">
     </a>
     <div class="post-entry-1-contents flex-grow-1 d-flex flex-column justify-content-between">
       <div>
         <span class="meta d-inline-block mb-0">{{$data->tanggal}} <span class="mx-2">by</span> <a >Admin</a></span>
-        <h2 class="mb-3"><a href="{{url('detailartikel')}}">{{$data->judul}}</a></h2>
+        <h2 class="mb-3"><a href="{{route('detailartikel',$data->id)}}">{{$data->judul}}</a></h2>
         <p class="excerpt">{{$data->isi}}</p>
       </div>
-      <p class="mt-auto"><a href="{{url('detailartikel')}}">Read more</a></p>
+      <p class="mt-auto"><a href="{{route('detailartikel',$data->id)}}">Read more</a></p>
     </div>
   </div>
 </div>

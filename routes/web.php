@@ -22,21 +22,16 @@ use App\http\Controllers\FrontController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('/prestasi', function () {
+    return view('prestasi');
 });
 
-Route::get('/artikel', function () {
-    return view('artikel');
+Route::get('/fakultas', function () {
+    return view('fakultas');
 });
 
-Route::get('/detailartikel', function () {
-    return view('detailartikel');
-});
-
-Route::get('/dosen', function () {
-    return view('dosen');
-});
 
 Auth::routes(['register' => false]);
 
@@ -45,6 +40,9 @@ Route::get('/', [App\Http\Controllers\FrontController::class, 'index']);
 Route::get('/detail', [App\Http\Controllers\FrontController::class, 'detail']);
 Route::get('/artikel', [App\Http\Controllers\FrontController::class, 'artikel']);
 Route::get('/dosen', [App\Http\Controllers\FrontController::class, 'dosen']);
+Route::get('/fakultas', [App\Http\Controllers\FrontController::class, 'fakultas']);
+Route::get('/artikel{id}', [App\Http\Controllers\FrontController::class, 'detailartikel'])->name('detailartikel');
+
 
 
 Route::prefix('/admin')->middleware('auth')->group(function (){

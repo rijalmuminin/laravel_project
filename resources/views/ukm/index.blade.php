@@ -74,7 +74,7 @@
                                     @method('DELETE')
                             <a href="{{ route('ukm.edit', $data->id) }}" class="btn btn-success btn-sm">Edit</a>
                             <a href="{{ route('ukm.show', $data->id) }}" class="btn btn-warning btn-sm">Show</a>
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin?')">Delete</button>
                             </td>
                             </form>
                             </th>

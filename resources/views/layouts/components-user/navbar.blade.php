@@ -73,9 +73,9 @@
         <li><a href="{{url('artikel')}}">Artikel</a></li>
         <li><a href="{{url('dosen')}}">Dosen</a></li>
         <li><a href="{{url('detail')}}">Fasilitas</a></li>
-        <li><a href="#">Fakultas</a></li>
-        <li><a href="#">UKM</a></li>
-        <li><a href="#">Prestasi</a></li>
+        <li><a href="{{url('fakultas')}}">Fakultas</a></li>
+        <li><a href="{{url('ukm')}}">UKM</a></li>
+        <li><a href="{{url('prestasi')}}">Prestasi</a></li>
         <li>
           <!-- Laravel Auth Example Placeholder -->
         

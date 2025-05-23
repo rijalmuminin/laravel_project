@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('content')
-	<div class="hero-2 overlay" style="background-image: url('front/images/latar.jpg');">
+	<div class="hero-2 overlay" style="background-image: url('front/images/latarfasilitas.jpg');">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-5 mx-auto ">
